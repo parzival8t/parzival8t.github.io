@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableTopTime Soundboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Roboto&display=swap');
+        :root {
+            --white: #ffffff;
+            --gray: #0e0e0e;
+            --blue: #19233B;
+            --green: #28385F;
+            --lightblue: #283759;
+        }  
+        body {
+            height: 90vh;
+            max-height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background: rgb(40,55,89);
+            background: radial-gradient(circle, rgba(40,55,89,1) 8%, rgba(100,116,154,1) 26%, rgba(62,76,108,1) 48%, rgba(42,55,85,1) 68%, rgba(25,35,59,1) 85%);
+            color: var(--gray);
+        }
+        header {
+            margin: 1em;
+            color: var(--white);
+        }
+        .soundboard {
+            margin: 0.5em;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;            
+            /*grid-template-columns: 32vh 32vh 32vh;*/
+            grid-template-rows: 22vh 22vh 22vh 22vh;
+            grid-gap: 1%;
+        }
+        .card {
+            display: inline-block;
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 70%, var(--green) 70%, var(--green) 100%);
+            /*border: 3px solid rgba(0, 0, 0, 0.671);*/
+            text-align: center;
+            cursor: pointer;
+        }
+        .card p {
+            padding: 0.6em 0.4em 1em 0.4em;
+        }
+        .card img {
+            width: 90px;
+        }
+        .card img:hover {
+            width: 110px;
+            animation-name: example;
+            animation-duration: 1.5s;
+            animation-iteration-count: 3;
+        }
+        .active {
+            /*background: linear-gradient(var(--blue) 0%, var(--blue) 100%);*/
+        }
+        .show {
+            display: block;
+        }
+        .hide {
+            display: none;
+        }
+        @keyframes example {
+            0% {transform: rotate(0deg);}
+            25% {transform: rotate(30deg);}
+            75% {transform: rotate(-30deg);}
+            100% {transform: rotate(0deg);}
+        }
+                
+        @media only screen and (max-width: 420px) {
+            .soundboard {
+                margin: 1em;
+                grid-gap: 1;
+                grid-template-columns: 1fr;     
+            }
+            
+            .card p {
+                font-size: 10px;
+            }
+        }
+        
+        @media only screen and (min-width: 1100px) {
+            body {
+                width: 1100px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TTT Soundboard</h1>
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filter('all')"> Show all</button>
+            <button class="btn" onclick="filter('rob')"> Rob</button>
+            <button class="btn" onclick="filter('jazza')"> Jazza</button>
+            <button class="btn" onclick="filter('dave')"> Dave</button>
+            <button class="btn" onclick="filter('jenn')"> Jenn</button>
+          </div>
+          
+        <h2 id="h2-title">The ROB-ot</h2>
+    </header>
+    <div class="soundboard">
+        <div class="card rob" id="sound0">
+            <p>Leroy Jenkins</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound1">
+            <p>Eraser</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound2">
+            <p>we're doing...rob</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound3">
+            <p>F Rob</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound4">
+            <p>I hope Rob likes me</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound5">
+            <p>It was Andy the Octopus</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound6">
+            <p>Weird love language</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound7">
+            <p>Beep boop</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <div class="card rob" id="sound8">
+            <p>No one can see me</p>
+            <img src="rob1.png" alt="Rob">
+        </div>
+        <!--
+        <div class="card jazza" id="">
+            <p>jazza</p>
+            <img src="jazza1.png" alt="Jazza">
+        </div>
+        
+        <div class="card dave" id="">
+            <p>dave</p>
+            <img src="dave.png" alt="Dave">
+        </div>
+        
+        <div class="card jenn" id="">
+            <p>jenn</p>
+            <img src="jenn.png" alt="Jenn">
+        </div>
+        -->
+
+        
+        
+        <div class="card dave" id="sound9">
+            <p>They call me the biscuit boy</p>
+            <img src="dave.png" alt="Dave">
+        </div>
+        <div class="card dave" id="sound10">
+            <p>hello</p>
+            <img src="dave.png" alt="Dave">
+        </div>
+        <div class="card dave" id="sound10">
+            <p>you stop</p>
+            <img src="dave.png" alt="Dave">
+        </div>
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+        /* vars */
+        let sounds = ["Sounds/Rob/sound0.mp3", "Sounds/Rob/sound1.mp3", "Sounds/Rob/sound2.mp3", "Sounds/Rob/sound3.mp3", "Sounds/Rob/sound4.mp3", "Sounds/Rob/sound5.mp3", "Sounds/Rob/sound6.mp3", "Sounds/Rob/sound7.mp3", "Sounds/Rob/sound8.mp3", "Sounds/Dave/Sound9.mp3"];
+        let items = document.getElementsByClassName("card");
+        let title = document.getElementById("h2-title"); 
+        console.log(title.innerHTML); 
+
+        for (let i = 0; i < items.length; i++) {
+            console.log(items[i]); 
+            items[i].addEventListener("click", () => {
+                const audio = new Audio(sounds[i]);
+                audio.play();
+            });
+        };
+
+        /* functions */
+        $(".card").on('click', function() {
+            $(this).toggleClass('active');
+        });
+
+        $('.clear-button').on('click', function(){
+            $('.bingo-card__item').removeClass('active');
+        });
+
+
+        function filter(value){
+            title.innerHTML = value; 
+
+            if(value=="all"){
+                for (let i = 0; i < items.length; i++) {
+                    RemoveClass(items[i], "hide");
+                };
+            } else {
+                for (let i = 0; i < items.length; i++) {
+                    if(!items[i].classList.contains(value)){
+                        AddClass(items[i], "hide");
+                    } else {
+                        RemoveClass(items[i], "hide");
+                    }
+                };
+
+            }
+        }
+
+        function AddClass(element, name){
+            let cur_arr;
+            let new_items;
+
+            cur_arr = element.className.split(" "); 
+            new_items = name.split(" ");
+
+            for(let i = 0; i < new_items.length; i++){
+                if(cur_arr.indexOf(new_items[i])==-1){
+                    element.className += " " + new_items[i];
+                }
+            }
+        }
+
+        function RemoveClass(element, name) {
+            let cur_arr;
+            let new_items;
+
+            cur_arr = element.className.split(" ");
+            new_items = name.split(" ");
+            for (i = 0; i < new_items.length; i++) {
+                while (cur_arr.indexOf(new_items[i]) > -1) {
+                    cur_arr.splice(cur_arr.indexOf(new_items[i]), 1);
+                }
+            }
+            element.className = cur_arr.join(" ");
+        }
+
+    </script>
+</body>
+</html>
