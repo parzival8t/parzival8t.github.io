@@ -48,7 +48,7 @@
             padding: 0.6em 0.4em 1em 0.4em;
         }
         .card img {
-            width: 90px;
+            width: 80px;
         }
         .card img:hover {
             width: 110px;
@@ -105,8 +105,8 @@
           
         <h2 id="h2-title">The crew</h2>
     </header>
-    <div class="soundboard">
-        <div class="card rob" id="sound0">
+    <div class="soundboard" id="soundboard">
+        <!--<div class="card rob" id="sound0">
             <p>Leroy Jenkins</p>
             <img src="rob1.png" alt="Rob">
         </div>
@@ -118,6 +118,8 @@
             <p>we're doing...rob</p>
             <img src="rob1.png" alt="Rob">
         </div>
+
+        
         <div class="card rob" id="sound3">
             <p>F Rob</p>
             <img src="rob1.png" alt="Rob">
@@ -142,24 +144,6 @@
             <p>No one can see me</p>
             <img src="rob1.png" alt="Rob">
         </div>
-        <!--
-        <div class="card jazza" id="">
-            <p>jazza</p>
-            <img src="jazza1.png" alt="Jazza">
-        </div>
-        
-        <div class="card dave" id="">
-            <p>dave</p>
-            <img src="dave.png" alt="Dave">
-        </div>
-        
-        <div class="card jenn" id="">
-            <p>jenn</p>
-            <img src="jenn.png" alt="Jenn">
-        </div>
-        -->
-
-        
         
         <div class="card dave" id="sound9">
             <p>They call me the biscuit boy</p>
@@ -177,29 +161,157 @@
             <p>i have come from above</p>
             <img src="dave.png" alt="Dave"> 
         </div>
+        <div class="card dave" id="sound13">
+            <p>i should do the peepees too</p>
+            <img src="dave.png" alt="Dave"> 
+        </div>
+        <div class="card dave" id="sound14">
+            <p>you little prick</p>
+            <img src="dave.png" alt="Dave"> 
+        </div>
+        <div class="card dave" id="sound15">
+            <p>watch you dance on knife feet</p>
+            <img src="dave.png" alt="Dave"> 
+        </div>
+        <div class="card dave" id="sound16">
+            <p>the alphabet</p>
+            <img src="dave.png" alt="Dave"> 
+        </div>
+        <div class="card dave" id="sound17">
+            <p>pa pa pa</p>
+            <img src="dave.png" alt="Dave"> 
+        </div>
+        <div class="card dave" id="sound18">
+            <p>reboot</p>
+            <img src="dave.png" alt="Dave"> 
+        </div>
+        
+        <div class="card jazza" id="sound19">
+            <p>oh no</p>
+            <img src="jazza1.png" alt="Jazza"> 
+        </div>
+        
+        <div class="card jazza" id="sound20">
+            <p>awimbabwe</p>
+            <img src="jazza1.png" alt="Jazza"> 
+        </div>-->
     </div>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script>
-        /* vars */
-        let sounds = ["Sounds/Rob/sound0.mp3", "Sounds/Rob/sound1.mp3", "Sounds/Rob/sound2.mp3", "Sounds/Rob/sound3.mp3", "Sounds/Rob/sound4.mp3", "Sounds/Rob/sound5.mp3", "Sounds/Rob/sound6.mp3", "Sounds/Rob/sound7.mp3", "Sounds/Rob/sound8.mp3", "Sounds/Dave/Sound9.mp3", "Sounds/Dave/Sound10.mp3", "Sounds/Dave/Sound11.mp3", "Sounds/Dave/Sound12.mp3"];
+        /* --------- VARIABLES ---------  */
+
         let items = document.getElementsByClassName("card");
         let title = document.getElementById("h2-title"); 
-        console.log(title.innerHTML); 
+        let allObjectsArr = [];
 
-        for (let i = 0; i < items.length; i++) {
-            console.log(items[i]); 
-            items[i].addEventListener("click", () => {
-                const audio = new Audio(sounds[i]);
-                audio.play();
+
+        /* ------- START --------- */
+
+        AddItems(); 
+        ShowCards(); 
+        
+
+        /* ------- FUNCTIONS --------- */
+
+        function AddItems(){
+            const obj0 = {id:"sound0", text:"Leroy Jenkins", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound0.mp3"};
+            const obj1 = {id:"sound1", text:"Eraser", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound1.mp3"};
+            const obj2 = {id:"sound2", text:"we're doing...rob", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound2.mp3"};
+            const obj3 = {id:"sound3", text:"F Rob", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound3.mp3"};
+            const obj4 = {id:"sound4", text:"I hope Rob likes me", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound4.mp3"};
+            const obj5 = {id:"sound5", text:"It was Andy the Octopus", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound5.mp3"};
+            const obj6 = {id:"sound6", text:"Weird love language", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound6.mp3"};
+            const obj7 = {id:"sound7", text:"Beep boop", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound7.mp3"};
+            const obj8 = {id:"sound8", text:"No one can see me", person: "rob", img:"rob1.png", soundsrc: "Sounds/Rob/sound8.mp3"};
+            
+            const obj9 = {id:"sound9", text:"They call me the biscuit boy", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound9.mp3"};
+            const obj10 = {id:"sound10", text:"hello", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound10.mp3"};
+            const obj11 = {id:"sound11", text:"they just want the hair", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound11.mp3"};
+            const obj12 = {id:"sound12", text:"i have come from above", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound12.mp3"};
+            const obj13 = {id:"sound13", text:"i should do the peepees too", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound13.mp3"};
+            const obj14 = {id:"sound14", text:"you little prick", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound14.mp3"};
+            const obj15 = {id:"sound15", text:"watch you dance on knife feet", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound15.mp3"};
+            const obj16 = {id:"sound16", text:"the alphabet", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound16.mp3"};
+            const obj17 = {id:"sound17", text:"pa pa pa", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound17.mp3"};
+            const obj18 = {id:"sound18", text:"reboot", person: "dave", img:"dave.png", soundsrc: "Sounds/Dave/Sound18.mp3"};
+
+            const obj19 = {id:"sound19", text:"oh no", person: "jazza", img:"jazza1.png", soundsrc: "Sounds/Jazza/Sound19.mp3"};
+            const obj20 = {id:"sound20", text:"awimbabwe", person: "jazza", img:"jazza1.png", soundsrc: "Sounds/Jazza/Sound20.mp3"};
+            
+            allObjectsArr.push(obj0);  
+            allObjectsArr.push(obj1);
+            allObjectsArr.push(obj2);
+            allObjectsArr.push(obj3);
+            allObjectsArr.push(obj4);
+            allObjectsArr.push(obj5);
+            allObjectsArr.push(obj6);     
+            allObjectsArr.push(obj7);    
+            allObjectsArr.push(obj8);    
+            allObjectsArr.push(obj9);    
+            allObjectsArr.push(obj10); 
+            allObjectsArr.push(obj11); 
+            allObjectsArr.push(obj12); 
+            allObjectsArr.push(obj13); 
+            allObjectsArr.push(obj14); 
+            allObjectsArr.push(obj15); 
+            allObjectsArr.push(obj16); 
+            allObjectsArr.push(obj17);   
+            allObjectsArr.push(obj18);   
+            allObjectsArr.push(obj19);   
+            allObjectsArr.push(obj20);     
+
+            allObjectsArr.sort(function (a, b) {
+                if (a.text.toUpperCase() < b.text.toUpperCase()) {
+                    return -1;
+                }
+                if (a.text.toUpperCase() > b.text.toUpperCase()) {
+                    return 1;
+                }
+                return 0;
             });
-        };
+        }
 
-        /* functions */
+
+        function ShowCards(){
+            /* --------- show items --------- */
+            let cardsArray = [];
+            let soundboard = document.getElementById("soundboard");
+
+            for(let i = 0; i < allObjectsArr.length; i++){
+                const newCard = document.createElement("div");
+                newCard.setAttribute("class", `card ${allObjectsArr[i].person}`);
+                newCard.setAttribute("id", allObjectsArr[i].id);
+
+                const newP = document.createElement("p");
+                newP.innerHTML = allObjectsArr[i].text;
+                
+                const newImg = document.createElement("img");
+                newImg.src = allObjectsArr[i].img;
+                newImg.alt = allObjectsArr[i].person; 
+
+                newCard.appendChild(newP); 
+                newCard.appendChild(newImg); 
+
+                newCard.addEventListener("click", () => {
+                    const audio = new Audio(allObjectsArr[i].soundsrc);
+                    audio.play();
+                });
+                
+                cardsArray.push(newCard); 
+            }
+
+            for(let i = 0; i < cardsArray.length; i++){
+                soundboard.append(cardsArray[i]);
+            }
+        }
+
+
         $(".card").on('click', function() {
             $(this).toggleClass('active');
         });
+
 
         $('.clear-button').on('click', function(){
             $('.bingo-card__item').removeClass('active');
@@ -225,6 +337,7 @@
             }
         }
 
+
         function AddClass(element, name){
             let cur_arr;
             let new_items;
@@ -238,6 +351,7 @@
                 }
             }
         }
+
 
         function RemoveClass(element, name) {
             let cur_arr;
