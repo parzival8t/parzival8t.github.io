@@ -126,8 +126,6 @@
 
         /* ------- FUNCTIONS --------- */
 
-        // https://drive.google.com/file/d/15VPiRz-m_k_-ATyvhGaLXBvdl8_Y16wi/view?usp=share_link
-
         function AddItems(){
             //https://docs.google.com/uc?export=download&id={id}
             const obj0 = {id:"sound0", text:"Leroy Jenkins", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=15VPiRz-m_k_-ATyvhGaLXBvdl8_Y16wi"};
@@ -151,7 +149,7 @@
             const obj17 = {id:"sound17", text:"pa pa pa", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1DO88G7Zc9oGOhhPMttQbqB41C4qYgdeb"};
             const obj18 = {id:"sound18", text:"reboot", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1C_7_r8NTIHoW36MSxGVvZshYn3I263Lu"};
             
-            
+
             const obj19 = {id:"sound19", text:"oh no", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1aEsAyi8iEL2pASl_UaEU7DQWx92_egC7"};
             const obj20 = {id:"sound20", text:"awimbabwe", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1z9yR4whrf0B_3xlMER29-ytgJDbALC8_"};
             
@@ -210,6 +208,7 @@
                 newCard.appendChild(newImg); 
 
                 newCard.addEventListener("click", () => {
+                    console.log('sound: ' + allObjectsArr[i].soundsrc);
                     const audio = new Audio(allObjectsArr[i].soundsrc);
                     audio.play();
                 });
