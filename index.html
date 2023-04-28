@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TableTopTime Soundboard</title>
+    <title>Tabletop Time Soundboard</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Roboto&display=swap');
         :root {
@@ -13,6 +13,7 @@
             --blue: #19233B;
             --green: #28385F;
             --lightblue: #283759;
+            --hover: #8F4A64;
         }  
         body {
             height: 90vh;
@@ -56,14 +57,23 @@
             animation-duration: 1.5s;
             animation-iteration-count: 3;
         }
-        .active {
-            /*background: linear-gradient(var(--blue) 0%, var(--blue) 100%);*/
-        }
         .show {
             display: block;
         }
         .hide {
             display: none;
+        }
+        button {
+            background-color: var(--white);
+            padding: 0.6em 0.4em;
+            width: 8em;
+            box-shadow: none;
+            font-family: 'Roboto', sans-serif;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: var(--hover);
+            color: var(--white);
         }
         @keyframes example {
             0% {transform: rotate(0deg);}
@@ -96,11 +106,11 @@
     <header>
         <h1>TTT Soundboard</h1>
         <div id="myBtnContainer">
-            <button class="btn active" onclick="filter('all')"> Show all</button>
-            <button class="btn" onclick="filter('rob')"> Rob</button>
-            <button class="btn" onclick="filter('jazza')"> Jazza</button>
-            <button class="btn" onclick="filter('dave')"> Dave</button>
-            <button class="btn" onclick="filter('jenn')"> Jenn</button>
+            <button class="btn active" active onclick="filter('all', 'Crew')"> Show all</button>
+            <button class="btn" onclick="filter('rob', 'ROB-ot')"> Rob</button>
+            <button class="btn" onclick="filter('jazza', 'JAZZA')"> Jazza</button>
+            <button class="btn" onclick="filter('dave', 'Dave')"> Dave</button>
+            <button class="btn" onclick="filter('jenn', 'Jenn')"> Jenn</button>
           </div>
           
         <h2 id="h2-title">The crew</h2>
@@ -152,7 +162,16 @@
 
             const obj19 = {id:"sound19", text:"oh no", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1aEsAyi8iEL2pASl_UaEU7DQWx92_egC7"};
             const obj20 = {id:"sound20", text:"awimbabwe", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1z9yR4whrf0B_3xlMER29-ytgJDbALC8_"};
-            
+            const obj22 = {id:"sound22", text:"I'm fucking disappeared", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1vNfRxd5_jACiAn12ECMeoF2Is03p8Ij7"};            
+            const obj23 = {id:"sound23", text:"Swearing", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=12HB6GGYCuDtHer_TtwruXxXQEVet9Ffb"};
+            const obj24 = {id:"sound24", text:"You f*cked it up", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1rjcHuuZ7otPWLPxhj2KXKlNid2qid_ux"};
+            const obj25 = {id:"sound25", text:"They are screwed", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1zlDSyV7bAPSU3zH9AUGQY1VRlWZf71LW"};
+            const obj26 = {id:"sound26", text:"Choir practice", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1FjPNofNuS9dlhksmdkQok_8hfEwRL5g1"};
+
+        
+            const obj21 = {id:"sound21", text:"Nah there's still your feet", person: "jenn", img:"jenn.png", soundsrc: "https://docs.google.com/uc?export=download&id=1lLIOs7gdRaNzHj__G293gs8tvrVXLMlG"};
+     
+
             allObjectsArr.push(obj0);  
             allObjectsArr.push(obj1);
             allObjectsArr.push(obj2);
@@ -173,7 +192,13 @@
             allObjectsArr.push(obj17);   
             allObjectsArr.push(obj18);   
             allObjectsArr.push(obj19);   
-            allObjectsArr.push(obj20);     
+            allObjectsArr.push(obj20);   
+            allObjectsArr.push(obj21);    
+            allObjectsArr.push(obj22);   
+            allObjectsArr.push(obj23);   
+            allObjectsArr.push(obj24);   
+            allObjectsArr.push(obj25);   
+            allObjectsArr.push(obj26);   
 
             allObjectsArr.sort(function (a, b) {
                 if (a.text.toUpperCase() < b.text.toUpperCase()) {
@@ -232,8 +257,8 @@
         });
 
 
-        function filter(value){
-            title.innerHTML = value; 
+        function filter(value, word){
+            title.innerHTML = word; 
 
             if(value=="all"){
                 for (let i = 0; i < items.length; i++) {
@@ -247,7 +272,6 @@
                         RemoveClass(items[i], "hide");
                     }
                 };
-
             }
         }
 
