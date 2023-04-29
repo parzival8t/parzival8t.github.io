@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabletop Time Soundboard</title>
+    <title>INDEX</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Roboto&display=swap');
         :root {
@@ -107,213 +107,16 @@
 </head>
 <body>
     <header>
-        <h1>TTT Soundboard</h1>
-        <div id="myBtnContainer">
-            <button class="btn active" active onclick="filter('all', 'Crew')"> Show all</button>
-            <button class="btn" onclick="filter('rob', 'ROB-ot')"> Rob</button>
-            <button class="btn" onclick="filter('jazza', 'JAZZA')"> Jazza</button>
-            <button class="btn" onclick="filter('dave', 'Dave')"> Dave</button>
-            <button class="btn" onclick="filter('jenn', 'Jenn')"> Jenn</button>
-          </div>
-          
-        <h2 id="h2-title">The crew</h2>
+        <h1>HOME</h1>
     </header>
-    <div class="soundboard" id="soundboard">
-
-    </div>
+    
     <footer>
-        <p>Check out tabletoptime roleplay on <a href="https://www.youtube.com/c/tabletoptimeroleplay">youtube</a></p>
-        <p>This is made for fun, if you want a quote removed just message me on discord</p>
+        <p></p>
     </footer>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <script>
-        /* --------- VARIABLES ---------  */
-
-        let items = document.getElementsByClassName("card");
-        let title = document.getElementById("h2-title"); 
-        let allObjectsArr = [];
-
-
-        /* ------- START --------- */
-
-        AddItems(); 
-        ShowCards(); 
-        
-
-        /* ------- FUNCTIONS --------- */
-
-        function AddItems(){
-            //https://docs.google.com/uc?export=download&id={id}
-            const obj0 = {id:"sound0", text:"Leroy Jenkins", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=15VPiRz-m_k_-ATyvhGaLXBvdl8_Y16wi"};
-            const obj1 = {id:"sound1", text:"Eraser", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1jjpkgaQejYlxlUTKVHBZStig704sFan_"};
-            const obj2 = {id:"sound2", text:"we're doing...rob", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=14XfRDrN1t1ooaQyej3yZbnT3V97Dsywy"};const obj3 = {id:"sound3", text:"F Rob", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1RStIr542_6qTaeW0MJRtiLL9oElExH_y"};
-            const obj4 = {id:"sound4", text:"I hope Rob likes me", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1QCnqhVtThySoZ-v_PF1HA4HFUndDzsd5"};
-            const obj5 = {id:"sound5", text:"It was Andy the Octopus", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1K_BB0X3RfLx98JIMDXnKy-cgI39j02iQ"};
-            const obj6 = {id:"sound6", text:"Weird love language", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1LfiNsxMl0HkhVWCCBVoTBPLH3Ke_l_Ec"};
-            const obj7 = {id:"sound7", text:"Beep boop", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1GiiofOaz-jTQzTT-LfKNWBOcy_HiRArd"};
-            const obj8 = {id:"sound8", text:"No one can see me", person: "rob", img:"rob1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1JTKKwxChN8Wq6dSFzBxIkW8RCQDtmAHf"};
-            
-
-            const obj9 = {id:"sound9", text:"They call me the biscuit boy", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1OToUI7WxyqasEJLxmic8bxpc7xfSZxbu"};
-            const obj10 = {id:"sound10", text:"hello", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1r4z9GKRocBRWucg9e7oGSvSjTCd2crdQ"};
-            const obj11 = {id:"sound11", text:"they just want the hair", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1ozsFUgsRyFxCUWe2haBeLVMeKfwoVWgr"};
-            const obj12 = {id:"sound12", text:"i have come from above", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1hM94iK06jpSCv1kWoyy9KOiqrZ712nrO"};
-            const obj13 = {id:"sound13", text:"i should do the peepees too", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1cY_JRHpu_An6yK_OIGPKpK8-a_WzCIGN"};
-            const obj14 = {id:"sound14", text:"you little prick", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1NmppRQk_pBaJZFSeX8igRaGuDhMC_scv"};
-            const obj15 = {id:"sound15", text:"watch you dance on knife feet", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=12GECgmPiG7cKGziE9HOjgZvSuSgn0B1r"};
-            const obj16 = {id:"sound16", text:"the alphabet", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1rnsiI1d9IeswpEiR5FzE0k9cA3wbfMJW"};
-            const obj17 = {id:"sound17", text:"pa pa pa", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1DO88G7Zc9oGOhhPMttQbqB41C4qYgdeb"};
-            const obj18 = {id:"sound18", text:"reboot", person: "dave", img:"dave.png", soundsrc: "https://docs.google.com/uc?export=download&id=1C_7_r8NTIHoW36MSxGVvZshYn3I263Lu"};
-            
-
-            const obj19 = {id:"sound19", text:"oh no", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1aEsAyi8iEL2pASl_UaEU7DQWx92_egC7"};
-            const obj20 = {id:"sound20", text:"awimbabwe", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1z9yR4whrf0B_3xlMER29-ytgJDbALC8_"};
-            const obj22 = {id:"sound22", text:"I'm fucking disappeared", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1vNfRxd5_jACiAn12ECMeoF2Is03p8Ij7"};            
-            const obj23 = {id:"sound23", text:"Swearing", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=12HB6GGYCuDtHer_TtwruXxXQEVet9Ffb"};
-            const obj24 = {id:"sound24", text:"You f*cked it up", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1rjcHuuZ7otPWLPxhj2KXKlNid2qid_ux"};
-            const obj25 = {id:"sound25", text:"They are screwed", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1zlDSyV7bAPSU3zH9AUGQY1VRlWZf71LW"};
-            const obj26 = {id:"sound26", text:"Choir practice", person: "jazza", img:"jazza1.png", soundsrc: "https://docs.google.com/uc?export=download&id=1FjPNofNuS9dlhksmdkQok_8hfEwRL5g1"};
-
-        
-            const obj21 = {id:"sound21", text:"Nah there's still your feet", person: "jenn", img:"jenn.png", soundsrc: "https://docs.google.com/uc?export=download&id=1lLIOs7gdRaNzHj__G293gs8tvrVXLMlG"};
-     
-
-            allObjectsArr.push(obj0);  
-            allObjectsArr.push(obj1);
-            allObjectsArr.push(obj2);
-            allObjectsArr.push(obj3);
-            allObjectsArr.push(obj4);
-            allObjectsArr.push(obj5);
-            allObjectsArr.push(obj6);     
-            allObjectsArr.push(obj7);    
-            allObjectsArr.push(obj8);    
-            allObjectsArr.push(obj9);    
-            allObjectsArr.push(obj10); 
-            allObjectsArr.push(obj11); 
-            allObjectsArr.push(obj12); 
-            allObjectsArr.push(obj13); 
-            allObjectsArr.push(obj14); 
-            allObjectsArr.push(obj15); 
-            allObjectsArr.push(obj16); 
-            allObjectsArr.push(obj17);   
-            allObjectsArr.push(obj18);   
-            allObjectsArr.push(obj19);   
-            allObjectsArr.push(obj20);   
-            allObjectsArr.push(obj21);    
-            allObjectsArr.push(obj22);   
-            allObjectsArr.push(obj23);   
-            allObjectsArr.push(obj24);   
-            allObjectsArr.push(obj25);   
-            allObjectsArr.push(obj26);   
-
-            allObjectsArr.sort(function (a, b) {
-                if (a.text.toUpperCase() < b.text.toUpperCase()) {
-                    return -1;
-                }
-                if (a.text.toUpperCase() > b.text.toUpperCase()) {
-                    return 1;
-                }
-                return 0;
-            });
-        }
-
-
-        function ShowCards(){
-            /* --------- show items --------- */
-            let cardsArray = [];
-            let soundboard = document.getElementById("soundboard");
-
-            for(let i = 0; i < allObjectsArr.length; i++){
-                const newCard = document.createElement("div");
-                newCard.setAttribute("class", `card ${allObjectsArr[i].person}`);
-                newCard.setAttribute("id", allObjectsArr[i].id);
-
-                const newP = document.createElement("p");
-                newP.innerHTML = allObjectsArr[i].text;
-                
-                const newImg = document.createElement("img");
-                newImg.src = allObjectsArr[i].img;
-                newImg.alt = allObjectsArr[i].person; 
-
-                newCard.appendChild(newP); 
-                newCard.appendChild(newImg); 
-
-                newCard.addEventListener("click", () => {
-                    //console.log('sound: ' + allObjectsArr[i].soundsrc);
-                    const audio = new Audio(allObjectsArr[i].soundsrc);
-                    audio.play();
-                });
-                
-                cardsArray.push(newCard); 
-            }
-
-            for(let i = 0; i < cardsArray.length; i++){
-                soundboard.append(cardsArray[i]);
-            }
-        }
-
-
-        $(".card").on('click', function() {
-            $(this).toggleClass('active');
-        });
-
-
-        $('.clear-button').on('click', function(){
-            $('.bingo-card__item').removeClass('active');
-        });
-
-
-        function filter(value, word){
-            title.innerHTML = word; 
-
-            if(value=="all"){
-                for (let i = 0; i < items.length; i++) {
-                    RemoveClass(items[i], "hide");
-                };
-            } else {
-                for (let i = 0; i < items.length; i++) {
-                    if(!items[i].classList.contains(value)){
-                        AddClass(items[i], "hide");
-                    } else {
-                        RemoveClass(items[i], "hide");
-                    }
-                };
-            }
-        }
-
-
-        function AddClass(element, name){
-            let cur_arr;
-            let new_items;
-
-            cur_arr = element.className.split(" "); 
-            new_items = name.split(" ");
-
-            for(let i = 0; i < new_items.length; i++){
-                if(cur_arr.indexOf(new_items[i])==-1){
-                    element.className += " " + new_items[i];
-                }
-            }
-        }
-
-
-        function RemoveClass(element, name) {
-            let cur_arr;
-            let new_items;
-
-            cur_arr = element.className.split(" ");
-            new_items = name.split(" ");
-            for (i = 0; i < new_items.length; i++) {
-                while (cur_arr.indexOf(new_items[i]) > -1) {
-                    cur_arr.splice(cur_arr.indexOf(new_items[i]), 1);
-                }
-            }
-            element.className = cur_arr.join(" ");
-        }
-
-    </script>
+ 
 </body>
 </html>
